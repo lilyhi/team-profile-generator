@@ -5,7 +5,7 @@ const fs = require('fs');
 // import modules
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Inter');
+const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
 // create HTML template for page, add styling
@@ -21,14 +21,14 @@ let htmlTemplate = `<!DOCTYPE html>
     <title>Team Profiles</title>
 </head>
 <body>
-
+    // need to add boostrap styling
     <header class="jumbotron">
-        <h1 class="app-title">
+        <h1 class="text-center">
         My Team
         </h1>
     </header>
 
-    // <main> add style to page here
+    // <main> add style to page here will cards go here? 
     </main>
 </body>
 </html>`
@@ -91,13 +91,13 @@ function questions() {
         {
             type: 'list',
                 name: 'addEmployee',
-                message: 'Select an employee to add to the team.',
+                message: 'Select an employee to add to the team or finish the team profile.',
                 choices: ['Enigneer', 'Intern', 'Finish team profile'],
                 validate: addEmployee => {
                     if (addEmployee) {
                         return true;
                     }   else {
-                        console.log('Please select an employee!');
+                        console.log('Please select an employee or select Finish!');
                         return false;
                     }
                 }
@@ -106,10 +106,10 @@ function questions() {
                     inquirer
                         .prompt({
                             type: 'input',
-                            name: 'engineerRole',
+                            name: 'engineerName',
                             message: 'What is the engineers name? (Required)',
-                            validate: engineerRole => {
-                                if (engineerRole) {
+                            validate: engineerName => {
+                                if (engineerName) {
                                     return true;
                                 }   else {
                                     console.log('Please enter the engineers name!');
@@ -156,8 +156,13 @@ function questions() {
                                 }
                             }
                         },               
-                        // taken back to menu to add more employees 
-    // intern 
+                        // when done, take back to add more employees or finish
+    // intern - 
+    // }   else if? {
+    //     pull up intern 
+    // }
+
+
     inquirer
         .prompt({
             type: 'input',
@@ -211,15 +216,40 @@ function questions() {
                     }
                 }
         },
-        // taken back to the menu to add more employees
+        // when done, take back to add more employees or finish
 
-
-
-
-
-                        
-                    
+    // }   else {
+    //     function to finish and generate HTML profile
+    // }
+         
                 } 
             }     
 
 }
+
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, function(error){
+//     if( error) {console.log(error); }
+    
+//     console.log("readme generated success");
+//     })
+// }
+// we are creating a file but is it the same type of file? 
+
+
+
+// Create a function to initialize app
+function init() {
+    console.log("Welcome to Team Profile Generator!");
+    inquirer.prompt(questions)
+    .then(answers => {
+        console.log("user answers", answers);
+        // writeToFile("ReadMe.md", answers)
+        // writeToFile("ReadMe.md", generateMarkdown({...answers}))
+        
+    })
+}
+
+// Function call to initialize app
+init();
