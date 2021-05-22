@@ -8,7 +8,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const {htmlTemplate, endOfHTML} = require("./src/templateCode");
-// if the object descunstruction doesnt work just give it a variable name.
+// if the object descunstruction doesnt work just give it a variable name
 
 let allTeamMembers = []; 
 
@@ -230,7 +230,7 @@ inquirer
     ])
     .then((internAnswer) => {
     console.log(internAnswer);
-      //ADD EMPLOYEE AGIN
+      //ADD EMPLOYEE AGAIN
     addEmployee();
     });
 } // END OF INTERN FUNCTION
@@ -242,16 +242,17 @@ function generateEmployeeHtml(){
         // generate the html for each iteration of the loop once the string has been created append it to the html string on line 238
     }
     // html variable to the template code 
+    
 }
 
 
 
-// TODO: Create a function to write file
+// Create a function to write file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, function(error){
     if( error) {console.log(error); }
 
-    console.log("Team Profile success");
+    console.log("Team Profile success!");
     })
 }
 
