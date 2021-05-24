@@ -14,7 +14,7 @@ This generator will create a team profile page for your entire team. It will inc
 * Google Fonts
 
 ## Walkthrough video link
-https://drive.google.com/file/d/18zNz0-hwuxR_cO7t5W1w9D6V72GmRC3C/view
+https://drive.google.com/file/d/1ocjjMAqavLfLM9kCYHd2sbtV4aOWwtNB/view
 
 ## Installation
 npm install
