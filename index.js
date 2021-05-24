@@ -120,7 +120,7 @@ function addEmployee() {
       },
     })
     .then((response) => {
-      console.log(response);
+    //   console.log(response);
 
       // chose engineer
       if (response.addEmployee === "Engineer") {
@@ -306,10 +306,10 @@ function writeHTML(){
     </body>
     
     </html>`
-    console.log(htmlStart);
+    console.log("Team Profile success!");
     fs.writeFileSync('./dist/index.html', htmlStart, function( err) {
         if (err) throw err;
-        console.log("Team Profile success!")
+        console.log("Error!")
     })
 }
 
